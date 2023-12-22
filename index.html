@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatiable" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home Page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id = "header">
+            <div class="container">
+                <nav>
+                    <img src="Images/logo.png" alt="logo" class="logo">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Skills</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+
+            <div class="header-text"> 
+            <p>C/C++ programmer</p>
+            <h1>Hi, I'm <span>Sajeev</span>! A Computer Engineering<br>Sophomore at the University of Toronto</h1> 
+            </div>
+
+        </div>
+    </div>
+
+<!--------------- about section --------------->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Images/aboutMe.png" >
+                </div>
+                <div class="about-col-2">
+                    <hi class="sub-title">About Me</hi>
+                    <p>Hi! My name is Sajeev and I am a second year Computer Engineering student at the University of Toronto. I am a passionate programmer who is always looking to learn new things. I am currently looking for a summer internship to gain experience in the software industry.</p>
+                <div class="tab-tiles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>C/C++</span><br></li>
+                        <li><span>HTML/CSS</span><br></li>
+                        <li><span>Verilog</span><br></li>
+                        <li><span>VScode</span><br></li>
+                        <li><span>Linux</span><br></li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Oct 2023 - Current</span><br>Software Developer at aUToronto</li>
+                        <li><span>Jan 2023 - May 2023</span><br>Project Manager at the University of Toronto</li>
+                        <li><span>Oct 2023 - May 2023</span><br>SUMO Robotics Competition Member at UTRA</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Sep 2022 - Current</span><br>BASc, Computer Engineering at the University of Toronto</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--------------- skills section --------------->
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    </body>
+</html>
