@@ -6,19 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Home Page</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e0f6f07602.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div id = "header">
             <div class="container">
                 <nav>
-                    <img src="logo.png" alt="logo" class="logo">
+                    <img src="Images/logo3.png" alt="logo" class="logo">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Skills</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
+
                 </nav>
 
             <div class="header-text"> 
@@ -35,11 +36,11 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="aboutMe.png" >
+                    <img src="Images/aboutMe2.png" >
                 </div>
                 <div class="about-col-2">
                     <hi class="sub-title">About Me</hi>
-                    <p>Hi! My name is Sajeev and I am a second year Computer Engineering student at the University of Toronto. I am a passionate programmer who is always looking to learn new things. I am currently looking for a summer internship to gain experience in the software industry.</p>
+                    <p>As a dedicated and passionate programmer, I aim to expand my knowledge and skills in the dynamic field of software development. I am seeking a summer internship to immerse myself in the software industry and gain hands-on experience. With a strong foundation in C/C++, I am eager to contribute to real-world projects and continue my professional growth. I invite potential opportunities and employers to connect with me through the contact tab at the bottom of this page. Let's explore how I can bring enthusiasm and fresh perspectives to your team!</p>
                 <div class="tab-tiles">
                     <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                     <p class="tab-links" onclick="opentab('experience')">Experience</p>
@@ -63,14 +64,73 @@
                 </div>
                 <div class="tab-contents" id="education">
                     <ul>
-                        <li><span>Sep 2022 - Current</span><br>BASc, Computer Engineering at the University of Toronto</li>
+                        <li><span>Sep 2022 - Current</span><br>University of Toronto, <br>Bachelor of Applied Science, <br>Computer Engineering (2nd Year)<br>UofT Engineering International Scholar Awardee<br>GPA: 3.60</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-<!--------------- skills section --------------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="portfolio-list">
+            <div class="portfolioElements">
+                <img src="Images/project1.png">
+                <div class="layer">
+                    <h3>Autonomous Line Tracking Robot</h3>
+                    <p>Implemented line tracking features using C++ to program a microcontroller such that the autonomous car complete a line tracking map.</p>
+                    <a href="https://github.com/Sajeev-D/ECE_robotics_competition">Learn</a>
+                </div>
+            </div>
+            <div class="portfolioElements">
+                <img src="Images/project2.png">
+                <div class="layer">
+                    <h3>Robot Arm</h3>
+                    <p>Developed a robot arm that can be controlled using a Bluetooth controller on the phone.</p>
+                    <a href="https://github.com/Sajeev-D/RoboArm">Learn</a>
+                </div>
+            </div>
+            <div class="portfolioElements">
+                <img src="Images/project3.jpg">
+                <div class="layer">
+                    <h3>Autonomous Line Tracking Robot</h3>
+                    <p>Implemented line tracking features using C++ to program a microcontroller such that the autonomous car complete a line tracking map.</p>
+                    <a href="#">Learn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----------------------Contact section----------------------->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-paper-plane"></i> sajeevbd04@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 4372479056</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/sajeev-debnath/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="resume.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    <div class="copyright">
+        <p>Created by Sajeev Debnath | &copy; 2023 All rights reserved</p>
+    </div>
+    </div>
 
     <script>
 
@@ -88,6 +148,22 @@
             document.getElementById(tabname).classList.add("active-tab");
         }
     </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbweu4B-u8puCgTykzQcoBMEGXZ_rxBInYcntngdAf9cTIzgTeDcX4cfA2nkVZix0wOPFA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById('msg')
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          msg.innerHTML = "Message sent successfully!" 
+          setTimeout(function(){msg.innerHTML = ""}, 5000)
+          form.reset()})
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 
     </body>
 </html>
