@@ -6,8 +6,12 @@
 }
 
 body{
-    background: #080808;
+    background: #000000;
     color: #fff;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 #header{
@@ -40,7 +44,7 @@ nav ul li{
 
 nav ul li a{
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
     font-size: 18px;
     transition: .4s;
     position: relative;
@@ -62,7 +66,7 @@ nav ul li a:hover::after{
 }
 
 .header-text{
-    margin-top: 20%;
+    margin-top: 15%;
     font-size: 30px;
 }
 
@@ -78,7 +82,7 @@ nav ul li a:hover::after{
 /*--------------- about section ---------------*/
 
 #about{
-    padding: 80px 0;
+    padding: 10px 0;
     color: #ababab
 }
 .row{
@@ -104,7 +108,7 @@ nav ul li a:hover::after{
 .sub-title{
     font-size: 60px;
     color: #ffffff;
-font-weight: 600;
+    font-weight: 600;
 }
 
 .tab-tiles{
@@ -138,6 +142,7 @@ font-weight: 600;
 .tab-contents ul li{
     list-style: none;
     margin: 10px 0;
+    font-weight: bold;
 }
 
 .tab-contents ul li span{
@@ -150,5 +155,209 @@ font-weight: 600;
 }
 
 .tab-contents.active-tab{
+    display: block;
+}
+
+/*--------------- portfolio section ---------------*/
+
+#portfolio{
+    padding: 50px 0;
+}
+
+.portfolio-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.portfolioElements{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolioElements img{
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer{
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0,0,0,0.5), #ff0000) ;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3{
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.layer a{
+    margin-top: 20px;
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.portfolioElements:hover img{
+    transform: scale(1.1);
+}
+
+.portfolioElements:hover .layer{
+    height: 100%;
+}
+
+/*************Contact*****************/
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+
+.contact-left p{
+    margin-top: 30px;
+}
+
+.contact-left p i{
+    color:#ff0000;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ffffff;
+    display: inline-block;
+}
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ffffff;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.btn.btn2{
+    display: inline-block;
+    background: #ffffff;
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    padding: 15px;
+    margin: 15px;
+    margin-left: 0px;
+    border: 0;
+    outline: none;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #2d2c2c;
+    color: #ffffff;
+}
+
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright{
+    text-align: center;
+    padding: 20px 0;
+    background: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/*--------------- css for small screens ---------------*/
+
+@media only screen and (max-width: 600px){
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+
+    .header-text h1{
+        font-size: 30px;
+    }
+
+    .sub-title{
+        font-size: 40px;
+    }
+
+    .about-col-1{
+        flex-basis: 100%;
+    }
+
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+
+    .about-col-2{
+        font-size: 14px;    
+    }
+
+    .tab-links{
+        margin-right: 20px;
+        font-size: 16px;
+    }
+
+    .contact-left{
+        flex-basis: 100%;
+    }
+
+    .contact-right{
+        flex-basis: 100%;
+    }
+    
+    .copyright{
+        font-size: 14px;
+    }
+}
+
+#msg{
+    color: #ffffff;
+    margin-top: -40px;
     display: block;
 }
