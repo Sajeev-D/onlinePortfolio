@@ -1,398 +1,180 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Futura', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatiable" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home Page</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e0f6f07602.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id = "header">
+            <div class="container">
+                <nav>
+                    <img src="logo3.png" alt="logo" class="logo">
+                    <ul id="sideMenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>                    
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+                </nav>
 
-body{
-    background: #000000;
-    color: #fff;
-}
+            <div class="header-text"> 
+            <p>C/C++ programmer</p>
+            <h1>Hi, I'm <span>Sajeev</span>! A Computer Engineering<br>Sophomore at the University of Toronto</h1> 
+            </div>
 
-html{
-    scroll-behavior: smooth;
-}
+        </div>
+    </div>
 
-#header{
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-}
+<!--------------- about section --------------->
 
-.container{
-    padding:  10px 10%;
-}
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="aboutMe2.png" >
+                </div>
+                <div class="about-col-2">
+                    <hi class="sub-title">About Me</hi>
+                    <p>As a dedicated and passionate programmer, I aim to expand my knowledge and skills in the dynamic field of software development. I am seeking a summer internship to immerse myself in the software industry and gain hands-on experience. With a strong foundation in C/C++, I am eager to contribute to real-world projects and continue my professional growth. I invite potential opportunities and employers to connect with me through the contact tab at the bottom of this page. Let's explore how I can bring enthusiasm and fresh perspectives to your team!</p>
+                <div class="tab-tiles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>C/C++</span><br></li>
+                        <li><span>HTML/CSS</span><br></li>
+                        <li><span>Verilog</span><br></li>
+                        <li><span>VScode</span><br></li>
+                        <li><span>Linux</span><br></li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Oct 2023 - Current</span><br>Software Developer at aUToronto</li>
+                        <li><span>Jan 2023 - May 2023</span><br>Project Manager at the University of Toronto</li>
+                        <li><span>Oct 2023 - May 2023</span><br>SUMO Robotics Competition Member at UTRA</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Sep 2022 - Current</span><br>University of Toronto, <br>Bachelor of Applied Science, <br>Computer Engineering (2nd Year)<br>UofT Engineering International Scholar Awardee<br>GPA: 3.60</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-.nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="portfolio-list">
+            <div class="portfolioElements">
+                <img src="project1.png">
+                <div class="layer">
+                    <h3>Autonomous Line Tracking Robot</h3>
+                    <p>Implemented line tracking features using C++ to program a microcontroller such that the autonomous car complete a line tracking map.</p>
+                    <a href="https://github.com/Sajeev-D/ECE_robotics_competition">Learn</a>
+                </div>
+            </div>
+            <div class="portfolioElements">
+                <img src="project2.png">
+                <div class="layer">
+                    <h3>Robot Arm</h3>
+                    <p>Developed a robot arm that can be controlled using a Bluetooth controller on the phone.</p>
+                    <a href="https://github.com/Sajeev-D/RoboArm">Learn</a>
+                </div>
+            </div>
+            <div class="portfolioElements">
+                <img src="project3.jpg">
+                <div class="layer">
+                    <h3>Autonomous Line Tracking Robot</h3>
+                    <p>Implemented line tracking features using C++ to program a microcontroller such that the autonomous car complete a line tracking map.</p>
+                    <a href="#">Learn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-.logo{
-    width: 300px;
-}
+<!-----------------------Contact section----------------------->
 
-nav ul li{
-    display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
-}
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-paper-plane"></i> sajeevbd04@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 4372479056</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/sajeev-debnath/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="resume.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    <div class="copyright">
+        <p>Created by Sajeev Debnath | &copy; 2023 All rights reserved</p>
+    </div>
+    </div>
 
-nav ul li a{
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-    transition: .4s;
-    position: relative;
-}   
+    <script>
 
-nav ul li a::after{
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #ff0000;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: .4s;
-}
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
 
-nav ul li a:hover::after{
-    width: 100%;
-}
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
 
-.header-text{
-    margin-top: 15%;
-    font-size: 30px;
-}
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbweu4B-u8puCgTykzQcoBMEGXZ_rxBInYcntngdAf9cTIzgTeDcX4cfA2nkVZix0wOPFA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById('msg')
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          msg.innerHTML = "Message sent successfully!" 
+          setTimeout(function(){msg.innerHTML = ""}, 5000)
+          form.reset()})
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 
-.header-text h1{
-    font-size: 60px;
-    margin-top: 20px;
-}
-
-.header-text h1 span{
-    color: #ff0000;
-}
-
-/*--------------- about section ---------------*/
-
-#about{
-    padding: 10px 0;
-    color: #ababab
-}
-.row{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.about-col-1{
-    flex-basis: 35%;
-}
-
-.about-col-1 img{
-    width: 100%;
-    border-radius: 15px;
-
-}
-
-.about-col-2{
-    flex-basis: 60%;
-}
-
-.sub-title{
-    font-size: 60px;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.tab-tiles{
-    display: flex;
-    margin: 20px 0 40px;
-}
-
-.tab-links{
-    margin-right: 50px;
-    font-size: 18px;
-    font-weight: 500;    
-    cursor: pointer;
-    position: relative;
-}
-
-.tab-links::after{
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #ff0000;
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    transition: .5s;
-}
-
-.tab-links.active-link::after{
-    width: 50%;
-}
-
-.tab-contents ul li{
-    list-style: none;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-.tab-contents ul li span{
-    color: #ff0000;
-    font-size: 14px;
-}
-
-.tab-contents{
-    display: none;
-}
-
-.tab-contents.active-tab{
-    display: block;
-}
-
-/*--------------- portfolio section ---------------*/
-
-#portfolio{
-    padding: 50px 0;
-}
-
-.portfolio-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
-}
-
-.portfolioElements{
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-}
-
-.portfolioElements img{
-    width: 100%;
-    height: 90%;
-    border-radius: 10px;
-    display: block;
-    transition: transform 0.5s;
-}
-
-.layer{
-    width: 100%;
-    height: 0%;
-    background: linear-gradient(rgba(0,0,0,0.5), #ff0000) ;
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    font-size: 14px;
-    transition: height 0.5s;
-}
-
-.layer h3{
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.layer a{
-    margin-top: 20px;
-    color: #ff0000;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
-    background-color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
-}
-
-.portfolioElements:hover img{
-    transform: scale(1.1);
-}
-
-.portfolioElements:hover .layer{
-    height: 100%;
-}
-
-/*************Contact*****************/
-
-.contact-left{
-    flex-basis: 35%;
-}
-.contact-right{
-    flex-basis: 60%;
-}
-
-.contact-left p{
-    margin-top: 30px;
-}
-
-.contact-left p i{
-    color:#ff0000;
-    margin-right: 10px;
-    font-size: 20px;
-}
-
-.social-icons{
-    margin-top: 30px;
-}
-
-.social-icons a{
-    text-decoration: none;
-    font-size: 30px;
-    margin-right: 15px;
-    color: #ffffff;
-    display: inline-block;
-}
-
-.btn{
-    display: block;
-    margin: 50px auto;
-    width: fit-content;
-    border: 1px solid #ffffff;
-    padding: 14px 50px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #000000;
-}
-
-.btn.btn2{
-    display: inline-block;
-    background: #ffffff;
-}
-
-.contact-right form{
-    width: 100%;
-}
-
-form input, form textarea{
-    width: 100%;
-    padding: 15px;
-    margin: 15px;
-    margin-left: 0px;
-    border: 0;
-    outline: none;
-    border-radius: 6px;
-    font-size: 14px;
-    background: #2d2c2c;
-    color: #ffffff;
-}
-
-form .btn2{
-    padding: 14px 60px;
-    font-size: 18px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.copyright{
-    text-align: center;
-    padding: 20px 0;
-    background: #000000;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 300;
-}
-
-/*--------------- css for small screens ---------------*/
-nav .fa-solid{
-    display: none;
-}
-
-@media only screen and (max-width: 600px){
-
-    .header-text{
-        margin-top: 50%;
-        font-size: 16px;
+  <script>
+    var sideMenu = document.getElementById("sideMenu");
+    function openMenu(){
+        sideMenu.style.right = "0";
     }
-
-    .header-text h1{
-        font-size: 30px;
+    function closeMenu(){
+        sideMenu.style.right = "-200px";
     }
+  </script>
 
-    .sub-title{
-        font-size: 40px;
-    }
-
-    .about-col-1{
-        flex-basis: 100%;
-    }
-
-    .about-col-1{
-        margin-bottom: 30px;
-    }
-
-    .about-col-2{
-        font-size: 18px;    
-    }
-
-    .tab-links{
-        margin-right: 20px;
-        font-size: 18px;
-    }
-
-    .contact-left{
-        flex-basis: 100%;
-    }
-
-    .contact-right{
-        flex-basis: 100%;
-    }
-    
-    .copyright{
-        font-size: 14px;
-    }
-
-    nav .fa-solid{
-        display: block;
-        font-size: 25px;
-    }
-
-    nav ul{
-        background: #ff0000;
-        position: fixed;
-        top: 0px;
-        right: -200px;
-        width: 200px;
-        height: 100vh;
-        padding: 50px;
-        z-index: 2;
-        transition: right .5s;
-    } 
-
-    nav ul li{
-        display: block;
-        margin: 25px 0;
-    }
-
-    nav ul .fa-solid{
-        position: absolute;
-        top: 25px;
-        right: 25px;
-        color: #ffffff;
-        cursor: pointer;
-    
-    }
-}
-
-#msg{
-    color: #ffffff;
-    margin-top: -40px;
-    display: block;
-}
+    </body>
+</html>
